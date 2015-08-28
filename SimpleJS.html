@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Simple Data Collection Using jQuery</title>
+		<meta charset="utf-8" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+			
+			
+				var person = {
+					firstName : "",
+					lastName : "",
+					age : 0,
+					email : ""
+				};
+				
+				var makePerson = function(fName, lName, myAge, myEmail){
+					person.firstName = fName;
+					person.lastName = lName;
+					person.age = myAge;
+					person.email = myEmail;
+					
+					$("#contacts").append("<li>"+person.firstName+" "+person.lastName+"</li>");
+				};
+			
+				var fName = $("#firstN");
+				var lName = $("#lastN");
+				var age = $("#age");
+				var email = $("#email");
+				
+				$("#submitBtn").click(function(){
+				
+					firstNV = fName.val();
+					lastNV = lName.val();
+					ageV = age.val();
+					emailV = email.val();
+				
+					if(firstNV != "" && lastNV != "" && ageV != 0 && emailV != ""){
+						makePerson(firstNV, lastNV, ageV, emailV);
+					}
+					else{
+						alert("WARNING, empty field!");
+					}
+				
+					$("#firstNS").text(person.firstName);
+					$("#lastNS").text(person.lastName);
+					$("#ageS").text(person.age);
+					$("#emailS").text(person.email);
+				});
+				
+				$("#clear").click(function(){
+				
+					fName.val("");
+					lName.val("");
+					age.val("");
+					email.val("");
+										
+				});
+				 
+			
+			});
+		</script>
+	</head>
+	
+	<body>
+		<h1>Enter Contact Details</h1>
+		<form>
+			First Name: <input type="text" id="firstN"><br /><br />
+			Last Name: <input type="text" id="lastN"><br /><br />
+			Age: <input type="number" min="3" max="130" id="age"><br /><br />
+			Email: <input type="email" id="email">
+		</form>
+		<br />
+		<button type="button" id="submitBtn">Submit</button>
+
+		<hr />
+		<h2>Results</h2>
+
+		<p>
+			First Name: <span id="firstNS"></span>
+		</p>
+		<p>
+			Last Name: <span id="lastNS"></span>
+		</p>
+		<p>
+			Age: <span id="ageS"></span>
+		</p>
+		<p>
+			Email: <span id="emailS"></span>
+		</p>
+
+		<button type="button" id="clear">Clear</button>
+		
+		<h2>Contacts Saved</h2>
+		<ol id="contacts">
+		</ol>
+
+	</body>
+</html>
