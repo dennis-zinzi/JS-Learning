@@ -1,4 +1,36 @@
 
-#createdpg img{
+#createdpg{
+	background-image: url("Images/emptypage.png");
+	background-size: relative;
 	border: 1px solid;
+	float: left;
+	height: 500px;
+	width: 780px;
+	padding: 60px 10px 10px 10px;
 }
+
+#inpage, #cretedpg{
+	float: left;
+	display: inline;
+	width: 35%;
+}
+
+#buttons{
+	/*margin-top: 150px;*/
+	position: relative;
+	top: 150px;
+	/*right: 150px;*/
+	right: 35%;
+	float: left;
+}
+
+#submitBtn, #clearBtn{
+	height: 25px;
+	width: 50px;
+}
+
+textarea{
+	float: left;
+}
+
+
