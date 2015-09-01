@@ -18,6 +18,8 @@
 				var inLines = [];
 
 				submitBtn.click(function(){
+					createdpg.empty();
+
 
 					var heading = "<!DOCTYPE html>\n<html>\n<head>";
 					var hrexp = /^<title>/g;
@@ -43,11 +45,12 @@
 							createdpg.append(newItem);
 						}
 
-						submitBtn.attr("disabled","true");
+						//submitBtn.attr("disabled","true");
 
 					}
 					else{
 						alert("There's something wrong...");
+						correct.hide();
 					}
 
 				});
@@ -69,7 +72,9 @@
 		<hr />
 		<div id="inpage">
 			<h2>Input</h2>
-			<textarea rows="10" cols= "30" placeholder="Write a simple html page with one level header" id="txtIn"></textarea>
+			<div>
+				<textarea rows="20" cols= "45" placeholder="Write a simple html page with one level header" id="txtIn"></textarea>
+			</div>
 			<div id="buttons">
 				<button id="submitBtn">Submit</button>
 				<button id="clearBtn">Clear</button>

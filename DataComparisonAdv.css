@@ -18,9 +18,9 @@
 #buttons{
 	/*margin-top: 150px;*/
 	position: relative;
-	top: 150px;
+	top: 280px;
 	/*right: 150px;*/
-	right: 35%;
+	right: 50%;
 	float: left;
 }
 
@@ -29,8 +29,8 @@
 	width: 50px;
 }
 
-textarea{
+div textarea{
 	float: left;
+	
 }
-
 
