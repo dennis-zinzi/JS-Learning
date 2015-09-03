@@ -40,6 +40,9 @@
 					if(headOK && titleOK && (closeOK || altCloseOK) && endOK){
 						correct.show();
 
+						//Sets "tab" to title specified by user
+						$("#createdtitle").text(inLines[3].substring(7,inLines[3].length-8));
+
 						for(i = 7; i < inLines.length-2; i++){
 							var newItem = $(inLines[i]);//.attr("class",".outpg");
 							createdpg.append(newItem);
@@ -88,6 +91,8 @@
 
 		<h2>Output</h2>
 		
+		<h3 id="createdtitle"></h3>
+
 		<div id="createdpg">
 			
 		</div>
