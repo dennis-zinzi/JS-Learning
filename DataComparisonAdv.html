@@ -33,17 +33,27 @@
 					inLines = textIn.val().split("\n");
 
 					var headOK = ((inLines[0]+"\n"+inLines[1]+"\n"+inLines[2]) == heading);
+
 					var titleOK = (inLines[3].match(hrexp) && inLines[3].match(hrexp2));
+					var altPosTitleOK = ((inLines[4].match(hrexp) && inLines[4].match(hrexp2)) && ((inLines[5]+"\n"+inLines[6]) == closehead));
+
 					var closeOK = ((inLines[4]+"\n"+inLines[5]+"\n"+inLines[6]) == (charset+"\n"+closehead));
 					var altCloseOK = ((inLines[4]+"\n"+inLines[5]+"\n"+inLines[6]) == (charsetAlt+"\n"+closehead));
+					var altPosCloseOK = ((inLines[3] == charset) || (inLines[3] == charsetAlt));
+
 					var endOK = ((inLines[inLines.length-2]+"\n"+inLines[inLines.length-1]) == end);
 
-					if(headOK && titleOK && (closeOK || altCloseOK) && endOK){
+					if(headOK && ((titleOK && (closeOK || altCloseOK)) || (altPosTitleOK && altPosTitleOK)) && endOK){
 						correct.show();
 
-						//Sets "tab" to title specified by user
-						$("#createdtitle").text(inLines[3].substring(7,inLines[3].length-8));
-
+						if(titleOK){
+							//Sets "tab" to title specified by user
+							$("#createdtitle").text(inLines[3].substring(7,inLines[3].length-8));
+						}
+						else if(altPosTitleOK){
+							$("#createdtitle").text(inLines[4].substring(7,inLines[4].length-8));	
+						}
+						
 						for(i = 7; i < inLines.length-2; i++){
 							var newItem = $(inLines[i]);//.attr("class",".outpg");
 							createdpg.append(newItem);

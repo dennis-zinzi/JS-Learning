@@ -15,18 +15,17 @@
 	width: 35%;
 }
 
-#buttons{
-	/*margin-top: 150px;*/
+div#buttons{
 	position: relative;
-	top: 280px;
-	/*right: 150px;*/
-	right: 50%;
-	float: left;
+	display: inline-block;
+	padding: 10px;
+	left: 15%;
 }
 
-#submitBtn, #clearBtn{
+#buttons button{
 	height: 25px;
-	width: 50px;
+	width: 65px;
+	margin-right: 50px;
 }
 
 div textarea{
@@ -41,5 +40,10 @@ div textarea{
 	font-size: 12px;
 	font-weight: normal;
 	font-family: "Arial";
+}
+
+#correct{
+	position: relative;
+	left: 50px;
 }
 
