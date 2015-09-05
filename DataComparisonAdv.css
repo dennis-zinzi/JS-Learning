@@ -1,7 +1,10 @@
 
+*{
+	background-color: #c7e8f9;
+}
+
 #createdpg{
 	background-image: url("Images/emptypage.png");
-	background-size: relative;
 	border: 1px solid;
 	float: left;
 	height: 500px;
@@ -26,10 +29,13 @@ div#buttons{
 	height: 25px;
 	width: 65px;
 	margin-right: 50px;
+	background-color: #f5f6f6;
 }
 
 div textarea{
 	float: left;
+	background-color: white;
+	resize: none;
 	
 }
 
@@ -44,6 +50,7 @@ div textarea{
 
 #correct{
 	position: relative;
-	left: 50px;
+	left: 25%;
+	color: green;
 }
 

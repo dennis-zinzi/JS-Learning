@@ -18,6 +18,8 @@
 
 				var inLines = [];
 
+				textIn.attr("placeholder", "Write a simple html page with at least level header");
+
 				submitBtn.click(function(){
 					createdpg.empty();
 
@@ -53,6 +55,7 @@
 						else if(altPosTitleOK){
 							$("#createdtitle").text(inLines[4].substring(7,inLines[4].length-8));	
 						}
+
 						
 						for(i = 7; i < inLines.length-2; i++){
 							var newItem = $(inLines[i]);//.attr("class",".outpg");
@@ -87,7 +90,7 @@
 		<div id="inpage">
 			<h2>Input</h2>
 			<div>
-				<textarea rows="20" cols= "45" placeholder="Write a simple html page with one level header" id="txtIn"></textarea>
+				<textarea rows="20" cols= "45" id="txtIn"></textarea>
 			</div>
 			<div id="buttons">
 				<button id="submitBtn">Submit</button>
@@ -104,8 +107,7 @@
 		
 		<h3 id="createdtitle"></h3>
 
-		<div id="createdpg">
-			
+		<div id="createdpg">			
 		</div>
 
 	</body>
