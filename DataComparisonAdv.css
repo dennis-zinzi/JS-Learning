@@ -54,3 +54,11 @@ div textarea{
 	color: green;
 }
 
+#heading, #headOut{
+	text-align: center;
+}
+
+#headIn{
+	position: relative;
+	left: 30%;
+}
